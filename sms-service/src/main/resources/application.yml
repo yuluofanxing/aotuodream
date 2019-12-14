@@ -1,0 +1,15 @@
+server:
+  port: ${port:9011}
+spring:
+  application:
+    name: sms-service
+aliyun:
+  sms:
+    id: LTAI9BSsfdJhFlos
+    secret: AoTKVE5wi8nejQIhZYFoalDF8gOlDf
+    templateCode: SMS_169898313
+    signName: 品优购商城
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9101/eureka

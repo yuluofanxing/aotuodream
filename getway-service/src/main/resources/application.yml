@@ -1,0 +1,27 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: getway-service
+  cloud:
+    gateway:
+      enabled: true
+      routes:
+        - id: getway-service-user
+          uri: lb://user-service
+          #断言
+          predicates:
+            - Path=/user/**
+        - id: getway-service-register
+          uri: lb://register-service
+          predicates:
+            - Path=/register/**
+        - id: getway-service-sms
+          uri: lb://sms-service
+          #断言
+          predicates:
+            - Path=/sms/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9101/eureka

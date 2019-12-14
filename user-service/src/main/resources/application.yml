@@ -1,0 +1,24 @@
+server:
+  port: ${port:9001}
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mysql_test
+    username: root
+    password: root
+  #redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+#别名包
+mybatis:
+  type-aliases-package: com.aotuo.pojo
+  #日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9101/eureka
